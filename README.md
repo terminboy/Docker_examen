@@ -4,6 +4,8 @@
 
 ## Запуск
 
+Создайте `.env` по образцу `.env.example`, затем выполните:
+
 ```bash
 docker compose up --build
 ```
