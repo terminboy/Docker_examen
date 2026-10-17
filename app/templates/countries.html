@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title %}Страны{% endblock %}
+
+{% block content %}
+<h2>Страны</h2>
+{% if countries %}
+    <ul class="cards">
+        {% for country in countries %}
+        <li>
+            <a href="/countries/{{ country.id }}/cities">{{ country.name }}</a>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>Страны пока не добавлены.</p>
+{% endif %}
+{% endblock %}

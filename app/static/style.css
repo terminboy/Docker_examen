@@ -1,0 +1,95 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #243447;
+    background: #f4f7fa;
+}
+
+header {
+    padding: 20px 10%;
+    color: white;
+    background: #1976d2;
+}
+
+header h1 {
+    margin-top: 0;
+}
+
+nav a {
+    margin-right: 18px;
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    max-width: 900px;
+    margin: 30px auto;
+    padding: 25px;
+    background: white;
+    border-radius: 10px;
+}
+
+.cards {
+    padding: 0;
+    list-style: none;
+}
+
+.cards li,
+.detail-card {
+    margin-bottom: 12px;
+    padding: 16px;
+    background: #eef5fc;
+    border-radius: 8px;
+}
+
+.cards span {
+    display: block;
+    margin-top: 6px;
+}
+
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+input,
+select,
+button {
+    padding: 10px;
+    font-size: 16px;
+}
+
+.city-form label {
+    display: block;
+    margin-bottom: 15px;
+}
+
+.city-form input,
+.city-form select {
+    display: block;
+    width: 100%;
+    margin-top: 5px;
+    box-sizing: border-box;
+}
+
+button {
+    color: white;
+    background: #1976d2;
+    border: 0;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.pagination {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}

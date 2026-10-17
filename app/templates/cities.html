@@ -1,0 +1,41 @@
+{% extends "base.html" %}
+
+{% block title %}Все города{% endblock %}
+
+{% block content %}
+<h2>Все города</h2>
+
+<form method="get" action="/cities" class="search-form">
+    <input type="text" name="search" value="{{ search }}" placeholder="Название города">
+    <button type="submit">Найти</button>
+</form>
+
+{% if cities %}
+    <table>
+        <tr>
+            <th>Город</th>
+            <th>Страна</th>
+            <th>Население</th>
+        </tr>
+        {% for item in cities %}
+        <tr>
+            <td><a href="/cities/{{ item.city.id }}">{{ item.city.name }}</a></td>
+            <td>{{ item.country.name }}</td>
+            <td>{{ item.city.population }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+{% else %}
+    <p>Города не найдены.</p>
+{% endif %}
+
+<div class="pagination">
+    {% if page > 1 %}
+        <a href="/cities?search={{ search }}&page={{ page - 1 }}&limit={{ limit }}">Назад</a>
+    {% endif %}
+    <span>Страница {{ page }}</span>
+    {% if has_next %}
+        <a href="/cities?search={{ search }}&page={{ page + 1 }}&limit={{ limit }}">Вперёд</a>
+    {% endif %}
+</div>
+{% endblock %}

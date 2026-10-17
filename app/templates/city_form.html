@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block title %}Добавить город{% endblock %}
+
+{% block content %}
+<h2>Добавить город</h2>
+
+{% if countries %}
+<form method="post" action="/cities/add" class="city-form">
+    <label>
+        Название
+        <input type="text" name="name" required>
+    </label>
+    <label>
+        Население
+        <input type="number" name="population" min="0" required>
+    </label>
+    <label>
+        Страна
+        <select name="country_id" required>
+            {% for country in countries %}
+            <option value="{{ country.id }}">{{ country.name }}</option>
+            {% endfor %}
+        </select>
+    </label>
+    <button type="submit">Сохранить</button>
+</form>
+{% else %}
+<p>Сначала добавьте страну через Swagger.</p>
+{% endif %}
+{% endblock %}

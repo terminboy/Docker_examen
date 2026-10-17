@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+
+{% block title %}Города — {{ country.name }}{% endblock %}
+
+{% block content %}
+<h2>Города страны: {{ country.name }}</h2>
+{% if cities %}
+    <ul class="cards">
+        {% for city in cities %}
+        <li>
+            <a href="/cities/{{ city.id }}">{{ city.name }}</a>
+            <span>Население: {{ city.population }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+{% else %}
+    <p>В этой стране пока нет городов.</p>
+{% endif %}
+{% endblock %}
